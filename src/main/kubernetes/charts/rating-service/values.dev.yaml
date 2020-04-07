@@ -1,0 +1,11 @@
+---
+image:
+  tag: latest
+environment:
+  id: dev
+ingress:
+  host: rating-service.wiprodx.com
+app_java_options: -DAPP_LOGBACK_PATTERN=
+request_memory_mb: 1096Mi
+java_heap_memory_percent: 70
+java_debug_enable: false

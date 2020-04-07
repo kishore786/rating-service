@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: rating-service-deployment
+  name: rating-service-deployment
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      run: rating-service-deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: rating-service-deployment
+    spec:
+      serviceAccountName: deploy-svc-account
+      containers:
+      - image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+        imagePullPolicy: Always
+        name: rating-service-deployment
+        readinessProbe:
+          failureThreshold: 18
+          tcpSocket:
+            port: 8386
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        livenessProbe:
+          failureThreshold: 18
+          tcpSocket:
+            port: 8386
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        ports:
+        - containerPort: 8386
+          protocol: TCP
+        - containerPort: 5005
+          name: "jvm-debug"
+      restartPolicy: Always

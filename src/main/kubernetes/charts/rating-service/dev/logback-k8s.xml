@@ -1,0 +1,6 @@
+<!-- Note: do not add appender-ref!, following loggers are added to root logger. Make changes as appropriate -->
+<included>
+<logger name="org.springframework.boot" level="info"/>
+<logger name="com.pkg.name" level="info"/>
+</included>
+
