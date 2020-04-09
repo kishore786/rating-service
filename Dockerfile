@@ -10,4 +10,4 @@ EXPOSE 8383 8787
 ENTRYPOINT ["java","-jar","/app.jar"
 
 # FROM busybox
-# RUN echo "hello world
+# RUN echo "hello world"
