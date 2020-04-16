@@ -9,4 +9,4 @@
 #ENTRYPOINT ["java","-jar","/app.jar"
 
  FROM busybox
- RUN echo "hello world"
+ RUN echo "Welcome to TEKTON pipeline DEMO"
