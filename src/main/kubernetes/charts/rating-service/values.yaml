@@ -3,7 +3,7 @@ deployment:
   replicas: 2
 image:
   tag: latest
-  name: vaanay/rating-service
+  name: talk2me19/rating-service
 ingress:
   host: rating-service.wiprodx.com
 app_java_options: -DAPP_LOGBACK_PATTERN=
