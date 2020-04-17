@@ -25,11 +25,11 @@
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         
        <!-- Start: fabric8 plugin properties -->
-		<docker.image.prefix>vaanay</docker.image.prefix>
+		<docker.image.prefix>talk2me19</docker.image.prefix>
 		<fabric8.build.strategy>docker</fabric8.build.strategy>
 		<fabric8.mode>kubernetes</fabric8.mode>
-		<fabric8.authConfig.username>vaanay</fabric8.authConfig.username>
-		<fabric8.authConfig.password>dennis123</fabric8.authConfig.password>
+		<fabric8.authConfig.username>talk2me19</fabric8.authConfig.username>
+		<fabric8.authConfig.password>Password!1</fabric8.authConfig.password>
 		<!-- End: fabric8 plugin properties -->
 
     </properties>
